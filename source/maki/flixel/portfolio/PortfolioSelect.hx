@@ -12,6 +12,7 @@ class PortfolioSelect extends FlxState
 
 	var portfolioIDs:Array<String> = [for (id in PortfolioRegistry.PORTFOLIOS) id];
 	var portfolioTexts:FlxTypedSpriteContainer<FlxText>;
+    var portfolioTextPadding = 10;
 
 	override function create()
 	{
@@ -34,7 +35,8 @@ class PortfolioSelect extends FlxState
 
 		for (portfolioText in portfolioTexts)
 		{
-			portfolioText.y = portfolioText.ID * (portfolioText.size * 2);
+            portfolioText.x = portfolioTextPadding;
+			portfolioText.y = portfolioTextPadding + portfolioText.ID * (portfolioText.size * 2);
 
 			portfolioText.color = (selection == portfolioText.ID) ? FlxColor.YELLOW : FlxColor.WHITE;
 		}
