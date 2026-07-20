@@ -17,8 +17,8 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	
 	<source path="source" />
-	<assets path="assets" />
-	<assets path="mods" if="debug" />
+	<assets path="assets" exclude=".gitkeep" />
+	<assets path="mods" exclude=".gitkeep" if="debug" />
 
 	<haxelib name="flixel" />
 
