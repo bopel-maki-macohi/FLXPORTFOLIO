@@ -16,8 +16,9 @@ class PortfolioRegistry
 
 		for (folder in FileSystem.readDirectory(PORTFOLIO_DIRECTORY))
 		{
-			var metaPath = '$PORTFOLIO_DIRECTORY/portfolio.json';
+			var metaPath = '$PORTFOLIO_DIRECTORY/$folder/portfolio.json';
 
+			// trace(metaPath);
 			if (FileSystem.exists(metaPath))
 				PORTFOLIOS.push(folder);
 		};
