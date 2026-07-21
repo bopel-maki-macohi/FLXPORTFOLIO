@@ -47,6 +47,7 @@ class PortfolioSelect extends FlxState
 			add(portfolioTextCameraFollow);
 
 			portfolioTextCamera.follow(portfolioTextCameraFollow, LOCKON, 0.04);
+			portfolioTextCamera.focusOn(portfolioTextCameraFollow.getPosition());
 
 			return;
 		}
