@@ -14,6 +14,8 @@ class PortfolioSelect extends FlxState
 	var portfolioTexts:FlxTypedSpriteContainer<FlxText>;
 	var portfolioTextPadding = 10;
 
+	var noPortfoliosText:FlxText;
+
 	override function create()
 	{
 		super.create();
@@ -27,11 +29,28 @@ class PortfolioSelect extends FlxState
 			portfolioText.ID = i;
 			portfolioTexts.add(portfolioText);
 		}
+
+		if (portfolioIDs.length > 0) return;
+
+		noPortfoliosText = new FlxText(0, 0, 0, 'No portfolios loaded.\nPress "R" to reload the portfolio entries', 32);
+		noPortfoliosText.alignment = CENTER;
+		noPortfoliosText.screenCenter();
+		add(noPortfoliosText);
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (portfolioTexts.length < 1)
+		{
+			if (FlxG.keys.anyJustPressed([R]))
+			{
+				PortfolioRegistry.reload();
+				FlxG.switchState(() -> new PortfolioSelect());
+			}
+			return;
+		}
 
 		for (portfolioText in portfolioTexts)
 		{
