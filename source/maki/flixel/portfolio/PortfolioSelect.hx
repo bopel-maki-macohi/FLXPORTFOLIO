@@ -12,7 +12,7 @@ class PortfolioSelect extends FlxState
 
 	var portfolioIDs:Array<String> = [for (id in PortfolioRegistry.PORTFOLIOS) id];
 	var portfolioTexts:FlxTypedSpriteContainer<FlxText>;
-    var portfolioTextPadding = 10;
+	var portfolioTextPadding = 10;
 
 	override function create()
 	{
@@ -35,7 +35,7 @@ class PortfolioSelect extends FlxState
 
 		for (portfolioText in portfolioTexts)
 		{
-            portfolioText.x = portfolioTextPadding;
+			portfolioText.x = portfolioTextPadding;
 			portfolioText.y = portfolioTextPadding + portfolioText.ID * (portfolioText.size * 2);
 
 			portfolioText.color = (selection == portfolioText.ID) ? FlxColor.YELLOW : FlxColor.WHITE;
@@ -43,6 +43,8 @@ class PortfolioSelect extends FlxState
 
 		if (FlxG.keys.anyJustPressed([W, UP])) changeSelection(-1);
 		if (FlxG.keys.anyJustPressed([S, DOWN])) changeSelection(1);
+
+		if (FlxG.keys.anyJustPressed([ENTER])) loadPortfolio(portfolioIDs[selection]);
 	}
 
 	function changeSelection(amount:Int)
@@ -52,5 +54,10 @@ class PortfolioSelect extends FlxState
 		if (selection < 0) selection = portfolioTexts.length - 1;
 
 		if (selection > portfolioTexts.length - 1) selection = 0;
+	}
+
+	function loadPortfolio(portfolio:String)
+	{
+		FlxG.switchState(() -> new PortfolioState(portfolio));
 	}
 }
