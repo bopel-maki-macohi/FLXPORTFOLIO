@@ -3,7 +3,7 @@ package maki.flixel.portfolio;
 import haxe.Json;
 import haxe.io.Path;
 import lime.utils.Assets;
-import maki.flixel.portfolio.PortfolioData.PortfolioMetaData;
+import maki.flixel.portfolio.data.PortfolioData;
 import sys.FileSystem;
 
 class PortfolioRegistry
