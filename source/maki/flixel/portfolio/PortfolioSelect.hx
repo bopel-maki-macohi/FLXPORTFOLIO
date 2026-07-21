@@ -10,7 +10,7 @@ class PortfolioSelect extends FlxState
 {
 	var selection:Int = 0;
 
-	var portfolioIDs:Array<String> = [for (id in PortfolioRegistry.PORTFOLIOS) id];
+	var portfolioIDs:Array<String> = [for (id => portfolioMetadata in PortfolioRegistry.PORTFOLIOS) id];
 	var portfolioTexts:FlxTypedSpriteContainer<FlxText>;
 	var portfolioTextPadding = 10;
 
