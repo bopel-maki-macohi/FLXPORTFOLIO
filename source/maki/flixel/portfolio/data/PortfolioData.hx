@@ -1,5 +1,7 @@
 package maki.flixel.portfolio.data;
 
+import maki.flixel.portfolio.data.SocialData;
+
 typedef PortfolioMetaData =
 {
 	var author:String;
@@ -15,7 +17,7 @@ typedef PortfolioData =
 
 	var ?languages:Array<String>;
 
-	var ?socials:Array<String>;
+	var ?socials:Array<SocialData>;
 
 	/**
 	 * Mental "Disorders"

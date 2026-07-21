@@ -1,5 +1,22 @@
 {
     "author": "Maki (example)",
-    
-    "portfolio": {}
+    "portfolio": {
+        "pronouns": [
+            "it",
+            "is"
+        ],
+        "languages": [
+            "Spanish",
+            "Korean"
+        ],
+        "socials": [
+            {
+                "name": "Discord",
+                "url": "https://youtu.be/QppQy9YWMbE?list=RDQppQy9YWMbE"
+            }
+        ],
+        "mental_specialties": [
+            "Programmer"
+        ]
+    }
 }

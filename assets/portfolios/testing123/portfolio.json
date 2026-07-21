@@ -1,5 +1,22 @@
 {
-    "author": "Maki (testing123)",
-
-    "portfolio": {}
+    "author": "Maki (example)",
+    "portfolio": {
+        "pronouns": [
+            "he",
+            "she"
+        ],
+        "languages": [
+            "English"
+        ],
+        "socials": [
+            {
+                "name": "Discord",
+                "url": "https://youtu.be/QppQy9YWMbE?list=RDQppQy9YWMbE"
+            }
+        ],
+        "mental_specialties": [
+            "ADHD (90% sure)",
+            "Autism (90% sure)"
+        ]
+    }
 }
